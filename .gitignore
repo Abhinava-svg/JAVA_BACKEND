@@ -1,0 +1,30 @@
+# Java
+*.class
+
+# Maven
+target/
+
+# Gradle
+.gradle/
+.gradle-user-home/
+build/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+tempCodeRunnerFile.java
+*.zip
