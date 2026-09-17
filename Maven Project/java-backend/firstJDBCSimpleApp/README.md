@@ -2,6 +2,19 @@
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
+## Database credentials
+
+`LaunchApp.java` reads the database username and password from local environment variables. Do not put your real password in the Java file.
+
+In the PowerShell terminal you use to run the application, set them for that terminal session:
+
+```powershell
+$env:DB_USERNAME = "your_database_username"
+$env:DB_PASSWORD = "your_real_database_password"
+```
+
+These values are not committed to Git. The included `.gitignore` also prevents common local credential files from being added accidentally.
+
 ## Folder Structure
 
 The workspace contains two folders by default, where:

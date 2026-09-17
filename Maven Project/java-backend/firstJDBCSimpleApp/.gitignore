@@ -1,0 +1,6 @@
+# Local secrets: keep real database credentials out of Git.
+.env
+.env.*
+!.env.example
+db.properties
+database.properties
