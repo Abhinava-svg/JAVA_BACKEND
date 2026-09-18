@@ -15,17 +15,17 @@ public class LaunchApp {
              Statement statement = connect.createStatement()) {
 
             //execute query
-            String sql = "INSERT INTO studentInfo(id, sname, sage, scity) VALUES (1, 'ABHINAVA', 21, 'BENGALURU')";
-            int rowAffected = statement.executeUpdate(sql);
+            String sql = "SELECT * FROM studentInfo";
+            ResultSet rs = statement.executeQuery(sql);
 
             // process the result
 
-            if(rowAffected==0){
-                System.out.println("Unable to insert the data");
+            while(rs.next())
+            {
+                // int id = rs.getInt(1);
+                System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4));
             }
-            else{
-                System.out.println("Data inserted successfully");
-            }
+            rs.close();
         }
     }
 
