@@ -1,7 +1,8 @@
 package com.telusko.JDBCLearning;
+
 import java.sql.*;
 
-public class LaunchApp2 {
+public class LaunchApp3 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         //Load and Register the driver
         Class.forName("com.mysql.cj.jdbc.Driver");
@@ -17,27 +18,16 @@ public class LaunchApp2 {
 
         Statement statement = connect.createStatement();
 
-        String sql = "SELECT *FROM studentInfo";
             //execute query
-            boolean status = statement.execute(sql);
+            String sql = "DELETE FROM studentInfo where id = 101";
+            int rowAffected = statement.executeUpdate(sql);
 
             // process the result
-            if(status){
-                System.out.println("if block");
-                // select 
-                ResultSet rs = statement.getResultSet();
-                while(rs.next()){
-                    System.out.println(rs.getInt(1) + " " + rs.getString(2) + " " + rs.getInt(3) + " " + rs.getString(4));
-                }
+            if(rowAffected == 0){
+                System.out.println("failed to delete the record");
             }
             else{
-                System.out.println("else block");
-                // Insert , delete, update
-                int rows = statement.getUpdateCount();
-                if(rows == 0)
-                    System.out.println("Operation failed");
-                else
-                    System.out.println("operation successful!");
+                System.out.println("successfully deleted");
             }
             // close the resources
             statement.close();
@@ -46,4 +36,3 @@ public class LaunchApp2 {
         }
     }
 
-    
