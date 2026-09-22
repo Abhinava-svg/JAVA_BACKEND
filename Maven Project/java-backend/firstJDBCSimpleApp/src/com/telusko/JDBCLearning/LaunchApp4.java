@@ -6,7 +6,6 @@ public class LaunchApp4 {
     public static void main(String[] args) {
 
         Connection connect = null;
-        Statement statement;
         PreparedStatement pstmt = null;
 
         try{
